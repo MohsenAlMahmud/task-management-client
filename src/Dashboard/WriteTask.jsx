@@ -19,7 +19,6 @@ const WriteTask = () => {
                 <Link to="add-task"><button className="btn btn-accent">Add Task</button></Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
                 {tasks.map((task) =>
                     <div key={task._id}>
                         <div className="card w-96 bg-neutral text-neutral-content">
@@ -29,15 +28,8 @@ const WriteTask = () => {
                                     <h2 className="">{formatDateTime(task.createdAt).formattedTime}</h2>
                                 </div>
                                 <h2 className="card-title">{task.tittle}</h2>
-                                <h2 className="">{task.taskDescription}</h2>
-                                {/* <div className="card-actions justify-end">
-                                    <Link to={`/blogDetails/${task._id}`}>
-                                        <button className="btn btn-primary">Details</button>
-                                    </Link>
-                                    
-                                    <button className="btn btn-ghost" onClick={() => handleWishList(blog)}>Add to Wish List</button>
-                                    
-                                </div> */}
+                                <h2 className="">{task.taskDescription}</h2>                                
+                                <h2 className="">{task.status}</h2>                                
                             </div>
                         </div>
                     </div>

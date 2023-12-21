@@ -20,7 +20,8 @@ const AddTask = () => {
         // const category = form.category.value;
         // const shortDescription = form.shortDescription.value;
         const taskDescription = form.taskDescription.value;
-        const taskData = { name, email, tittle, taskDescription };
+        const status = 'to-do';
+        const taskData = { name, email, tittle, taskDescription, status };
         console.log(taskData);
 
         

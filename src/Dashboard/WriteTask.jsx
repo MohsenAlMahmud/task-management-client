@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../ClientAuthentication/AuthProvider';
 
 const apiUrl = 'http://localhost:5000/tasks';
 
 const WriteTask = () => {
+  const {user} = useContext(AuthContext);  
   const [tasks, setTasks] = useState([]);
   const [statusList, setStatusList] = useState(['to-do', 'on-going', 'completed']);
 
@@ -14,7 +16,10 @@ const WriteTask = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get(apiUrl);
+      // Assuming userEmail is the user's email obtained from somewhere in your component
+    //   const userEmail = 'user@example.com';  // Replace this with the actual user's email
+  
+      const response = await axios.get(`${apiUrl}?email=${user.email}`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -52,7 +57,7 @@ const WriteTask = () => {
 
   return (
     <div>
-      <h2>Write your task here</h2>
+      
       <div className="w-full text-right">
         <Link to="add-task">
           <button className="btn btn-accent">Add Task</button>
@@ -92,7 +97,7 @@ const WriteTask = () => {
                         </select>
                       </div>
                       <button
-                        className="btn btn-error mt-2"
+                        className="btn btn-sm btn-error mt-2"
                         onClick={() => handleDeleteTask(task._id)}
                       >
                         Delete

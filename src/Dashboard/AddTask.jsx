@@ -14,7 +14,7 @@ const AddTask = () => {
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
-        const tittle = form.tittle.value;       
+        const tittle = form.tittle.value;
         const taskDescription = form.taskDescription.value;
         const taskDeadline = form.taskDeadline.value;
         const priority = form.priority.value;
@@ -48,38 +48,42 @@ const AddTask = () => {
                     <label className="label">
                         <span className="label-text text-lg font-medium">Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Your Name" className="input input-bordered" />
+                    <input type="text" name="name" placeholder="Your Name" className="input input-bordered text-white" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg font-medium">Email</span>
                     </label>
-                    <input type="email" name="email" defaultValue={user?.email} readOnly placeholder="Your Email" className="input input-bordered" />
+                    <input type="email" name="email" defaultValue={user?.email} readOnly placeholder="Your Email" className="input input-bordered text-white" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg font-medium">Tittle</span>
                     </label>
-                    <input type="text" name="tittle" placeholder="Tittle" className="input input-bordered" />
-                </div>                
+                    <input type="text" name="tittle" placeholder="Tittle" className="input input-bordered text-white" />
+                </div>
 
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg font-medium">Task Description</span>
                     </label>
-                    <input type="text" name="taskDescription" placeholder="Task Description" className="input input-bordered" />
+                    <textarea
+                        name="taskDescription"
+                        placeholder="Task Description"
+                        className="textarea textarea-bordered text-white"
+                    ></textarea>
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg font-medium">Task Deadline</span>
                     </label>
-                    <input type="text" name="taskDeadline" placeholder="Task Deadline" className="input input-bordered" />
+                    <input type="text" name="taskDeadline" placeholder="Task Deadline" className="input input-bordered text-white" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg font-medium">Priority</span>
                     </label>
-                    <select name="priority" className="select select-bordered w-full">
+                    <select name="priority" className="select select-bordered w-full text-white">
                         <option defaultValue="">Pick your Task Priority</option>
                         <option value="Low">Low</option>
                         <option value="Moderate">Moderate</option>

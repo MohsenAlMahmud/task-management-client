@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../ClientAuthentication/AuthProvider';
 
-const apiUrl = 'http://localhost:5000/tasks';
+const apiUrl = 'https://task-management-server1.vercel.app/tasks';
 
 const WriteTask = () => {
   const {user} = useContext(AuthContext);  
@@ -15,9 +15,7 @@ const WriteTask = () => {
   }, []);
 
   const fetchTasks = async () => {
-    try {
-      // Assuming userEmail is the user's email obtained from somewhere in your component
-    //   const userEmail = 'user@example.com';  // Replace this with the actual user's email
+    try {    
   
       const response = await axios.get(`${apiUrl}?email=${user.email}`);
       setTasks(response.data);
@@ -63,7 +61,7 @@ const WriteTask = () => {
           <button className="btn btn-accent">Add Task</button>
         </Link>
       </div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
         {statusList.map((status) => (
           <div key={status} className="grid grid-cols-1">
             <h2 className="text-3xl font-bold pb-4">{capitalizeFirstLetter(status)} List</h2>

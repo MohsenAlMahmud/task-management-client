@@ -10,6 +10,7 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const { createUser } = useContext(AuthContext);
+    const [profileImage, setProfileImage] = useState(null);
 
     const navigate = useNavigate()
 

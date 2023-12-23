@@ -7,6 +7,8 @@ import Register from "../ClientAuthentication/Register";
 import WriteTask from "../Dashboard/WriteTask";
 import AddTask from "../Dashboard/AddTask";
 import PrivateRoute from "../PrivateRoute";
+import Profile from "../Dashboard/Profile";
+import UpdateProfile from "../Dashboard/UpdateProfile";
 
 export const router = createBrowserRouter([
     {
@@ -35,11 +37,19 @@ export const router = createBrowserRouter([
         {
           path: 'write-task',
           element: <WriteTask></WriteTask>,
-          loader: () => fetch(`http://localhost:5000/tasks`)
+          loader: () => fetch(`https://task-management-server1.vercel.app/tasks`)
         },        
         {
           path: 'write-task/add-task',
           element: <AddTask></AddTask>
+        },
+        {
+          path: 'profile',
+          element: <Profile></Profile>
+        },
+        {
+          path: 'profile/updateProfile',
+          element: <UpdateProfile></UpdateProfile>
         },
         
       ]

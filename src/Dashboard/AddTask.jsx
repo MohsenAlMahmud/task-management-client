@@ -24,7 +24,7 @@ const AddTask = () => {
 
 
         try {
-            const response = await axios.post("http://localhost:5000/tasks", taskData, {
+            const response = await axios.post("https://task-management-server1.vercel.app/tasks", taskData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
